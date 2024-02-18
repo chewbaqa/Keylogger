@@ -23,8 +23,26 @@ class Keylogger:
 
 def create_gui(keylogger):
     root = tk.Tk()
-    start_button = tk.Button(root, text="Start", command=keylogger.start)
-    stop_button = tk.Button(root, text="Stop", command=keylogger.stop)
+
+    root.geometry("690x420")
+    root.title("erhszo's Keylogger")
+
+    label = tk.Label(root, text="Hello there!", font=("Montserrat", 20))
+    label.pack(padx=30, pady=30)
+
+    description = tk.Label(
+        root,
+        text="Click on 'Start' to start the keylogger and on 'Stop' to stop it.",
+        font=("Poppins", 16),
+    )
+    description.pack()
+
+    start_button = tk.Button(
+        root, text="Start", font=("Montserrat", 14), command=keylogger.start
+    )
+    stop_button = tk.Button(
+        root, text="Stop", font=("Montserrat", 14), command=keylogger.stop
+    )
     start_button.pack()
     stop_button.pack()
     root.mainloop()
