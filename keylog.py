@@ -35,16 +35,21 @@ def create_gui(keylogger):
         text="Click on 'Start' to start the keylogger and on 'Stop' to stop it.",
         font=("Poppins", 16),
     )
-    description.pack()
+    description.pack(padx=5, pady=5)
+
+    frame = tk.Frame(root)
+    frame.pack()
 
     start_button = tk.Button(
-        root, text="Start", font=("Montserrat", 14), command=keylogger.start
+        frame, text="Start", font=("Montserrat", 14), command=keylogger.start
     )
     stop_button = tk.Button(
-        root, text="Stop", font=("Montserrat", 14), command=keylogger.stop
+        frame, text="Stop", font=("Montserrat", 14), command=keylogger.stop
     )
-    start_button.pack()
-    stop_button.pack()
+
+    start_button.pack(side=tk.LEFT, padx=20, pady=20)
+    stop_button.pack(side=tk.LEFT, padx=20, pady=20)
+
     root.mainloop()
 
 
